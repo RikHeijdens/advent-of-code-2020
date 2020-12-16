@@ -14,7 +14,7 @@ pub fn read_entries() -> Vec<i32> {
     // Split the buffer on new lines.
     let mut entries: Vec<i32> = Vec::new();
     for entry in buffer.split('\n') {
-        if entry.len() == 0 {
+        if entry.is_empty() {
             continue;
         }
         let entry: i32 = entry.parse().expect("Invalid input provided");

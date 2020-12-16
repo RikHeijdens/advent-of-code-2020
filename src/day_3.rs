@@ -1,6 +1,6 @@
 use std::io::BufRead;
 
-pub fn count_trees(map: &Vec<Vec<char>>, step_x: usize, step_y: usize) -> i32 {
+pub fn count_trees(map: &[Vec<char>], step_x: usize, step_y: usize) -> i32 {
     let mut count: i32 = 0;
     // Trees are represented as a '#', count the number of trees that we crash into.
     for i in 0..map.len() {
@@ -29,7 +29,7 @@ pub fn read_map<R: BufRead>(input: &mut R) -> Vec<Vec<char>> {
             .read_line(&mut buffer)
             .expect("Expected to read data from stdin!");
 
-        if buffer.len() == 0 {
+        if buffer.is_empty() {
             // End of Input
             break;
         }

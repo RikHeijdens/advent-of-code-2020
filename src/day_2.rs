@@ -72,12 +72,14 @@ pub fn read_password_policies() -> Vec<PasswordPolicy> {
             .read_line(&mut buffer)
             .expect("Expected to read password policy from stdin.");
 
-        if buffer.len() == 0 {
+        if buffer.is_empty() {
             break;
         }
 
-        let policy = PasswordPolicy::try_from(buffer.trim())
-            .expect(format!("Error: '{}' is not a valid password policy.", buffer).as_str());
+        let policy = PasswordPolicy::try_from(buffer.trim()).expect(&*format!(
+            "Error: '{}' is not a valid password policy.",
+            buffer
+        ));
         password_policies.push(policy);
     }
 
