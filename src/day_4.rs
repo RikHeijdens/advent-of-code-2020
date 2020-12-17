@@ -179,6 +179,12 @@ impl Passport {
     }
 }
 
+impl Default for Passport {
+    fn default() -> Self {
+        Passport::new()
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
