@@ -30,15 +30,12 @@ pub struct NavigationInstruction {
 #[derive(Debug, PartialEq)]
 pub struct Waypoint {
     x: isize,
-    y: isize
+    y: isize,
 }
 
 impl Waypoint {
     pub fn new() -> Self {
-        Waypoint {
-            x: 10,
-            y: 1
-        }
+        Waypoint { x: 10, y: 1 }
     }
 
     /// Rotates the waypoint about the given point.
@@ -79,7 +76,7 @@ pub struct Ship {
     x: isize,
     y: isize,
     orientation: isize,
-    waypoint: Waypoint
+    waypoint: Waypoint,
 }
 
 impl Ship {
@@ -88,7 +85,7 @@ impl Ship {
             x: 0,
             y: 0,
             orientation: 90,
-            waypoint: Waypoint::new()
+            waypoint: Waypoint::new(),
         }
     }
 
